@@ -8,7 +8,11 @@ export const lessonCategories:LessonCategory[] = [
  {id:"lesson-1",name:"Lesson 1",description:"Introduction to Remote Sensing: concepts, systems, applications, and GIS software.",contentStatus:"contains-content"},
  {id:"lesson-2",name:"Lesson 2",description:"Physical Principles of Remote Sensing: EMR, radiation, atmosphere, and scattering.",contentStatus:"contains-content"},
  {id:"lesson-3",name:"Lesson 3",description:"Energy Interactions with Earth Surface Features: surface behavior, spectral signatures, vegetation, soil, water, and separability.",contentStatus:"contains-content"},
- {id:"lesson-4",name:"Lesson 4",description:"Contains the existing sensors and platform lesson content.",contentStatus:"contains-content"}
+ {id:"lesson-4",name:"Lesson 4",description:"Sensors and Platform Characteristics: instruments, imaging systems, resolutions, satellites, and platforms.",contentStatus:"contains-content"},
+ {id:"lesson-5",name:"Lesson 5",description:"Digital Image Processing: pixels, detectors, storage formats, colour composites, enhancement, and classification.",contentStatus:"contains-content"},
+ {id:"lesson-6",name:"Lesson 6",description:"Geometric Corrections and Image Registration: distortion, control points, transformation, validation, and resampling.",contentStatus:"contains-content"},
+ {id:"lesson-7",name:"Lesson 7",description:"Radiometric Calibration: sensor noise, atmospheric effects, reflectance conversion, normalization, and topographic correction.",contentStatus:"contains-content"},
+ {id:"lesson-8",name:"Lesson 8",description:"Image Enhancement: spatial and spectral filtering, contrast, vegetation indices, PCA, data fusion, and pan-sharpening.",contentStatus:"contains-content"}
 ];
 export const modules:Module[] = [
  {id:"foundations",name:"Sensors, Platforms & Orbits",pages:[3,11],description:"Measurement instruments, platforms, sensor categories and orbital patterns."},

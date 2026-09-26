@@ -32,6 +32,26 @@ import {
   lesson3SourcePages,
 } from "./lesson3";
 import {
+  lesson5Concepts,
+  lesson5Questions,
+  lesson5SourcePages,
+} from "./lesson5";
+import {
+  lesson6Concepts,
+  lesson6Questions,
+  lesson6SourcePages,
+} from "./lesson6";
+import {
+  lesson7Concepts,
+  lesson7Questions,
+  lesson7SourcePages,
+} from "./lesson7";
+import {
+  lesson8Concepts,
+  lesson8Questions,
+  lesson8SourcePages,
+} from "./lesson8";
+import {
   lesson1ChallengeExpansion,
   lesson2ChallengeExpansion,
   lesson3ChallengeExpansion,
@@ -95,7 +115,15 @@ const lesson4Questions = [
   ...masteryQuestions,
   ...lesson4ChallengeExpansion,
 ];
-type LessonId = "lesson-1" | "lesson-2" | "lesson-3" | "lesson-4";
+type LessonId =
+  | "lesson-1"
+  | "lesson-2"
+  | "lesson-3"
+  | "lesson-4"
+  | "lesson-5"
+  | "lesson-6"
+  | "lesson-7"
+  | "lesson-8";
 type LessonContent = {
   concepts: Concept[];
   questions: Question[];
@@ -103,7 +131,11 @@ type LessonContent = {
     | typeof lesson1SourcePages
     | typeof lesson2SourcePages
     | typeof lesson3SourcePages
-    | typeof pdfSourcePages;
+    | typeof pdfSourcePages
+    | typeof lesson5SourcePages
+    | typeof lesson6SourcePages
+    | typeof lesson7SourcePages
+    | typeof lesson8SourcePages;
 };
 const lessonContent: Record<LessonId, LessonContent> = {
   "lesson-1": {
@@ -126,12 +158,36 @@ const lessonContent: Record<LessonId, LessonContent> = {
     questions: lesson4Questions,
     sourcePages: pdfSourcePages,
   },
+  "lesson-5": {
+    concepts: lesson5Concepts,
+    questions: lesson5Questions,
+    sourcePages: lesson5SourcePages,
+  },
+  "lesson-6": {
+    concepts: lesson6Concepts,
+    questions: lesson6Questions,
+    sourcePages: lesson6SourcePages,
+  },
+  "lesson-7": {
+    concepts: lesson7Concepts,
+    questions: lesson7Questions,
+    sourcePages: lesson7SourcePages,
+  },
+  "lesson-8": {
+    concepts: lesson8Concepts,
+    questions: lesson8Questions,
+    sourcePages: lesson8SourcePages,
+  },
 };
 const lessonLabel: Record<LessonId, string> = {
   "lesson-1": "Lesson 1",
   "lesson-2": "Lesson 2",
   "lesson-3": "Lesson 3",
   "lesson-4": "Lesson 4",
+  "lesson-5": "Lesson 5",
+  "lesson-6": "Lesson 6",
+  "lesson-7": "Lesson 7",
+  "lesson-8": "Lesson 8",
 };
 let view: "home" | "learn" | "cover" | "flash" | "quiz" | "library" | "source" =
   "home";
@@ -154,6 +210,14 @@ function activeSourcePages() {
     return lesson3SourcePages.map((page) => ({ ...page, lesson: "Lesson 3" }));
   if (activeLessonId === "lesson-2")
     return lesson2SourcePages.map((page) => ({ ...page, lesson: "Lesson 2" }));
+  if (activeLessonId === "lesson-6")
+    return lesson6SourcePages.map((page) => ({ ...page, lesson: "Lesson 6" }));
+  if (activeLessonId === "lesson-8")
+    return lesson8SourcePages.map((page) => ({ ...page, lesson: "Lesson 8" }));
+  if (activeLessonId === "lesson-7")
+    return lesson7SourcePages.map((page) => ({ ...page, lesson: "Lesson 7" }));
+  if (activeLessonId === "lesson-5")
+    return lesson5SourcePages.map((page) => ({ ...page, lesson: "Lesson 5" }));
   return lesson1SourcePages.map((page) => ({ ...page, lesson: "Lesson 1" }));
 }
 function nav() {
@@ -188,7 +252,7 @@ function home() {
       return `<button class="module lesson-category has-content" data-lesson="${id}"><span>LESSON ${index + 1}</span><h3>${esc(category.name)}</h3><p>${esc(category.description)}</p><div class="bar"><i style="width:100%"></i></div><small>${data.concepts.length} concepts · ${data.questions.length} challenge questions · ${data.sourcePages.length} pages</small><strong>Open Lesson ${index + 1} →</strong></button>`;
     })
     .join("");
-  return `<main class="lesson-dashboard"><header><div><p class="eyebrow">REMOTE SENSING · LESSON DASHBOARD</p><h1>Choose your lesson.</h1><p class="muted">Start by selecting one lesson. Every study tool you open afterward is locked to that lesson’s content.</p></div><div class="level">LVL ${level()}<span>${state.xp} XP on this device</span></div></header><section class="stats"><article><span>XP</span><b>${state.xp}</b><small>earned on this device</small></article><article><span>LESSONS</span><b>4</b><small>separate study categories</small></article><article><span>QUESTIONS</span><b>${Object.values(lessonContent).reduce((total, lesson) => total + lesson.questions.length, 0)}</b><small>lesson-scoped challenges</small></article><article><span>PAGES</span><b>${Object.values(lessonContent).reduce((total, lesson) => total + lesson.sourcePages.length, 0)}</b><small>source slides represented</small></article></section><section class="hero"><div><p class="eyebrow">SELECT A LESSON TO BEGIN</p><h2>Your study workspace will open after you choose.</h2><p>Progress remains in this browser on this device. It is never shared to another device.</p></div><div class="planet"><small>LESSON SELECT</small></div></section><h2>Lesson categories</h2><div class="modules">${categoryCards}</div></main>`;
+  return `<main class="lesson-dashboard"><header><div><p class="eyebrow">REMOTE SENSING · LESSON DASHBOARD</p><h1>Choose your lesson.</h1><p class="muted">Start by selecting one lesson. Every study tool you open afterward is locked to that lesson’s content.</p></div><div class="level">LVL ${level()}<span>${state.xp} XP on this device</span></div></header><section class="stats"><article><span>XP</span><b>${state.xp}</b><small>earned on this device</small></article><article><span>LESSONS</span><b>${lessonCategories.length}</b><small>separate study categories</small></article><article><span>QUESTIONS</span><b>${Object.values(lessonContent).reduce((total, lesson) => total + lesson.questions.length, 0)}</b><small>lesson-scoped challenges</small></article><article><span>PAGES</span><b>${Object.values(lessonContent).reduce((total, lesson) => total + lesson.sourcePages.length, 0)}</b><small>source slides represented</small></article></section><section class="hero"><div><p class="eyebrow">SELECT A LESSON TO BEGIN</p><h2>Your study workspace will open after you choose.</h2><p>Progress remains in this browser on this device. It is never shared to another device.</p></div><div class="planet"><small>LESSON SELECT</small></div></section><h2>Lesson categories</h2><div class="modules">${categoryCards}</div></main>`;
 }
 function emptyLesson(modeName: string) {
   return `<main>${backButton()}<header><div><p class="eyebrow">${activeLessonLabel().toUpperCase()}</p><h1>${modeName}</h1><p class="muted">This lesson category has no content yet. Select another category from the dashboard.</p></div></header></main>`;
@@ -286,7 +350,7 @@ function sourceList(
     items
       .map(
         (p) =>
-          `<article><header><b>${esc(p.lesson)} · PAGE ${p.page}</b><span>${esc(p.module)}</span></header><p class="visual-note">Page note: ${esc(p.visualDescription)}</p><pre>${esc(p.extractedText || "This page is represented by a diagram, figure, or table.")}</pre></article>`,
+          `<article><header><b>${esc(p.lesson)} · PAGE ${p.page}</b><span>${esc(p.module)}</span></header><pre>${esc(p.extractedText || "This page is represented by a diagram, figure, or table.")}</pre></article>`,
       )
       .join("") || "<p>No matching lesson page.</p>"
   );
