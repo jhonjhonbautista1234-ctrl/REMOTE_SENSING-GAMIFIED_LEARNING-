@@ -61,6 +61,21 @@ export const lesson2Questions:Question[]=[
  q("q23","tf","Non-selective scattering is wavelength-dependent.","false",76,"It scatters wavelengths equally and causes white or gray haze."),
  q("q24","mcq","Which interaction bends light at the boundary between two media?","Refraction",60,"Refraction happens because EMR speed differs between media.",["Refraction","Absorption","Rayleigh scattering","Radiant exitance"]),
  q("q25","identify","The fraction transmitted radiation divided by incident radiation is…","Transmittance",59,"The lesson defines t as transmitted radiation divided by incident radiation.")
+ ,q("q26","tf","EMR travels through a vacuum at the velocity of light.","true",9,"The EMR definition gives light velocity in a vacuum.")
+ ,q("q27","identify","The number of waves passing a point per unit time is…","Frequency",17,"Frequency is one of the basic wave parameters.")
+ ,q("q28","identify","The height of a wave crest or depth of a trough is…","Amplitude",17,"Amplitude describes the wave's size.")
+ ,q("q29","tf","Longer wavelengths have higher frequency when light speed is constant.","false",16,"Wavelength and frequency are inversely related.")
+ ,q("q30","mcq","Which part of visible light has the longest wavelength?","Red",26,"The lesson states violet is shortest and red is longest.",["Red","Violet","Blue","Green"])
+ ,q("q31","identify","The longest-wavelength remote-sensing region listed is…","Microwave",29,"Microwave spans roughly 0.1 mm to 1 m.")
+ ,q("q32","tf","A spectral signature is the same reflectance or emittance pattern for every material.","false",30,"A signature is distinctive to the material.")
+ ,q("q33","identify","Power received per unit area is…","Irradiance",33,"Irradiance is measured in W/m².")
+ ,q("q34","identify","Power per unit area per solid angle is…","Radiance",33,"Radiance has units W/m²·sr.")
+ ,q("q35","tf","Shorter-wavelength photons have greater energy.","true",34,"Q = hc/λ makes energy inversely proportional to wavelength.")
+ ,q("q36","mcq","An object with emissivity between 0 and 1 is a…","Gray body",37,"Gray bodies have emissivity between the black and white extremes.",["Gray body","Black body","White body","Vacuum"])
+ ,q("q37","tf","As temperature rises, Wien's-law peak shifts to shorter wavelengths.","true",40,"The source explicitly states this direction of shift.")
+ ,q("q38","mcq","Earth's emitted radiation is mainly in which part of the spectrum?","Thermal infrared",53,"Most terrestrial radiation occurs from 4 to 25 µm in thermal IR.",["Thermal infrared","Gamma rays","Visible green","Ultraviolet"])
+ ,q("q39","identify","Scattering by particles larger than 10 wavelengths is…","Non-selective scattering",76,"Large particles scatter all wavelengths similarly.")
+ ,q("q40","tf","Atmospheric windows are regions where EMR is relatively transparent through the atmosphere.","true",61,"That is the definition of an atmospheric window.")
 ];
 
 const pageNotes:string[]=[

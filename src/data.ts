@@ -1,12 +1,12 @@
 export type Difficulty = "easy" | "medium" | "hard" | "expert";
 export type Concept = { id:string; module:string; topic:string; term:string; definition:string; facts:string[]; sourcePage:number; difficulty:Difficulty; tags:string[] };
-export type Question = { id:string; type:"mcq"|"identify"|"tf"|"number"|"classify"; question:string; answer:string; choices?:string[]; explanation:string; sourcePage:number; module:string; difficulty:Difficulty };
+export type Question = { id:string; type:"mcq"|"identify"|"tf"|"number"|"classify"|"boss"; question:string; answer:string; choices?:string[]; explanation:string; sourcePage:number; module:string; difficulty:Difficulty };
 export type Module = { id:string; name:string; pages:[number,number]; description:string };
 export type LessonCategory = { id:string; name:string; description:string; contentStatus:"empty"|"contains-content" };
 export const lessonCategories:LessonCategory[] = [
  {id:"lesson-1",name:"Lesson 1",description:"Introduction to Remote Sensing: concepts, systems, applications, and GIS software.",contentStatus:"contains-content"},
  {id:"lesson-2",name:"Lesson 2",description:"Physical Principles of Remote Sensing: EMR, radiation, atmosphere, and scattering.",contentStatus:"contains-content"},
- {id:"lesson-3",name:"Lesson 3",description:"No content has been assigned yet.",contentStatus:"empty"},
+ {id:"lesson-3",name:"Lesson 3",description:"Energy Interactions with Earth Surface Features: surface behavior, spectral signatures, vegetation, soil, water, and separability.",contentStatus:"contains-content"},
  {id:"lesson-4",name:"Lesson 4",description:"Contains the existing sensors and platform lesson content.",contentStatus:"contains-content"}
 ];
 export const modules:Module[] = [

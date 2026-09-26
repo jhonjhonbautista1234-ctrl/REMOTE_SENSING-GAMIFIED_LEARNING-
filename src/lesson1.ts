@@ -43,6 +43,28 @@ export const lesson1Questions:Question[]=[
  q("q16","number","According to the source deck, ArcMap support ends after March 1, ___.","2026",31,"The deck states that ArcMap would no longer be supported after March 1, 2026."),
  q("q17","tf","Remote sensing necessarily interferes with the resource being observed.","false",18,"The deck identifies non-interference as a strength of remote sensing."),
  q("q18","classify","A laser used to illuminate a target is an example of a ___ energy source.","Active",19,"A lamp, laser, or microwave transmitter can provide active energy.")
+ ,q("q19","tf","Remote sensing is commonly used to study Earth's surface and atmosphere with electromagnetic techniques.","true",4,"The definition slide connects remote sensing to electromagnetic techniques.")
+ ,q("q20","identify","Data acquisition from a satellite is described as…","Spaceborne",14,"The deck distinguishes spaceborne platforms from airborne ones.")
+ ,q("q21","mcq","Which statement supports using remote sensing?","It provides information that is cost-effective",16,"Cost-effectiveness is one of the stated decision criteria.",["It provides information that is cost-effective","It always replaces fieldwork","It never needs a sensor","It only works for cities"])
+ ,q("q22","tf","A remotely sensed record can describe an entire area at a point in time.","true",18,"The deck notes its broad, time-specific area coverage.")
+ ,q("q23","identify","Natural solar energy reflected from an object is detected by a…","Passive system",22,"Passive systems detect naturally occurring radiation.")
+ ,q("q24","mcq","Which energy source is active?","Microwave transmitter",19,"Microwave transmitters are listed among active sources.",["Microwave transmitter","The Sun","Natural thermal emission","Reflected daylight"])
+ ,q("q25","tf","An active system may be limited by atmospheric transparency.","true",23,"Atmospheric transparency limits practical active-system operation.")
+ ,q("q26","identify","The step that turns incoming-radiation intensity into stored values is…","Quantization",20,"The sensor quantizes and stores the intensity.")
+ ,q("q27","mcq","Which is NOT presented as an advantage of remote sensing?","It eliminates all human-method error",25,"Human-method error is listed among limitations.",["It eliminates all human-method error","It reduces sampling bias","It can cover large areas rapidly","It can observe difficult locations"])
+ ,q("q28","tf","Most remote-sensing systems produce digital data that can be analyzed by computer.","true",24,"Calibrated digital data is a stated advantage.")
+ ,q("q29","identify","Mapping air and water quality is an application of…","Remote sensing",26,"The applications slide includes air and water quality.")
+ ,q("q30","mcq","Which is a common element in an ArcMap map layout?","Scale bar",27,"The deck lists scale bars among map elements.",["Scale bar","Microwave transmitter","Leaf cell","Radiometer lens"])
+ ,q("q31","tf","ArcMap maps are collections of layers.","true",27,"The ArcMap slide describes maps as layer collections.")
+ ,q("q32","identify","The GIS company named Environmental Systems Research Institute is…","ESRI",29,"ESRI expands to Environmental Systems Research Institute.")
+ ,q("q33","mcq","ESRI is headquartered in…","Redlands, California",29,"The source deck identifies Redlands, California.",["Redlands, California","Manila, Philippines","Paris, France","Tokyo, Japan"])
+ ,q("q34","tf","GIS and remote sensing have the same role in the forest-cover example.","false",8,"Remote sensing captures imagery; GIS maps deforestation from it.")
+ ,q("q35","classify","A device that records information from a distance without touching the target supports…","Remote sensing",4,"Non-contact acquisition is the core definition.")
+ ,q("q36","identify","The radiation emitted as heat from objects can be detected by a…","Passive system",22,"Passive systems can detect emitted thermal radiation.")
+ ,q("q37","tf","Remote sensing can be useful for politically inconvenient areas to access directly.","true",24,"The deck lists such locations among places RS can observe.")
+ ,q("q38","mcq","What can change through time and limit a sensor's measurements?","Instrument calibration",25,"Instrument calibration drift is a stated limitation.",["Instrument calibration","Earth's existence","GIS layers","A map title"])
+ ,q("q39","identify","The ArcGIS successor encouraged in the source deck is…","ArcGIS Pro",31,"The support-transition slide encourages moving to ArcGIS Pro.")
+ ,q("q40","tf","Remote sensing data always gives direct, rather than indirect, environmental information.","false",18,"The deck says it can describe characteristics directly or indirectly.")
 ];
 
 const pageNotes:string[]=[
