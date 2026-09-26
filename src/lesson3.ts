@@ -27,7 +27,12 @@ export const lesson3Concepts:Concept[]=[
  c("water-factors","Water-reflectance factors","Water reflectance changes with surface roughness, turbidity, suspended particles, depth, clarity, bottom reflectance, vegetation, and solar elevation.",47,["Turbidity increases reflectance; shallow water has higher reflectance."],"hard"),
  c("multispectral","Multispectral spectral signatures","A multispectral system measures a limited number of discrete bands; a feature’s response can be plotted as pixel digital number versus band number.",53,[],"medium"),
  c("spectral-resolution","Spectral resolution and separability","Spectral resolution is a sensor’s ability to define fine wavelength intervals; higher resolution supports separation of more similar feature classes.",56,["Hyperspectral analysis samples hundreds of narrow, closely spaced bands and can make continuous response curves."],"hard"),
- c("band-selection","Band selection","Spectral separability should guide land-cover classification; redundant correlated bands can be dropped to reduce dimensionality and classification cost.",57,[],"hard")
+ c("band-selection","Band selection","Spectral separability should guide land-cover classification; redundant correlated bands can be dropped to reduce dimensionality and classification cost.",57,[],"hard"),
+ c("composite-surface","Composite surface","A composite surface combines smooth and rough elements, so its directional reflectance is more complex than the ideal specular or Lambertian extremes.",7,["Most natural Earth surfaces behave as composites rather than perfect reflectors."],"medium"),
+ c("soil-organic-threshold","Organic matter and soil tone","Organic matter darkens soil and lowers reflectance; the lesson notes that soil with about 5% organic matter can appear dark brown or black.",36,["Lower organic-matter amounts tend toward lighter brown or gray tones."],"medium"),
+ c("water-surface-roughness","Water surface roughness","Water-surface topography affects colour and brightness through specular reflection: rougher water increases reflectance, while smooth-water response depends on sensor location.",47,["Floating materials and waves can complicate interpretation of water colour."],"hard"),
+ c("water-particles","Suspended particle effects in water","Suspended material can brighten water, but its spectral effect depends on type: organic material decreases blue and increases red reflectance, while inorganic material increases blue, green, and red reflectance.",47,["Suspended sediment may look similar to shallow clear water, so depth cannot be inferred from brightness alone."],"hard"),
+ c("submerged-vegetation","Submerged and emergent vegetation","Dense vegetation can hide water's dominant spectral curve; small amounts of vegetation increase green reflectance while lowering blue and red reflectance.",48,["Solar elevation also changes water response; the lesson gives 90° as a condition of minimal reflectance and maximum absorption."],"hard")
 ];
 
 export const lesson3Questions:Question[]=[
@@ -70,7 +75,12 @@ export const lesson3Questions:Question[]=[
  q("q37","tf","Correlated spectral bands can contain redundant information.","true",57,"The source warns that spectral bands are often correlated."),
  q("q38","mcq","Dropping redundant bands can help to…","Reduce dimensionality and classification cost",57,"The source names both benefits.",["Reduce dimensionality and classification cost","Increase reflection","Create transmission through soil","Remove all uncertainty"]),
  q("q39","classify","A mirror is an example of a ___ surface.","Specular",8,"Mirrors are listed as specular examples."),
- q("q40","classify","A material whose response depends on chemical composition and physical state is identified using its ___ signature.","Spectral",14,"Spectral signatures vary with composition and state.")
+ q("q40","classify","A material whose response depends on chemical composition and physical state is identified using its ___ signature.","Spectral",14,"Spectral signatures vary with composition and state."),
+ q("q41","identify","A natural surface made of both smooth and rough elements is a…","Composite surface",7,"Composite surfaces do not behave like either ideal reflection extreme."),
+ q("q42","mcq","A soil with about 5% organic matter may appear…","Dark brown or black",36,"The lesson gives this threshold example for organic-matter effects on soil tone.",["Dark brown or black","Bright blue","Transparent","Pure white"]),
+ q("q43","tf","Rougher water surfaces increase reflectance in the lesson's water-factor summary.","true",47,"The water-reflectance slide explicitly states that rough water increases reflectance."),
+ q("q44","classify","Suspended inorganic particles generally increase which reflectance channels?","Blue, green, and red",47,"The source distinguishes inorganic particles from organic particles by their broadband blue-green-red increase."),
+ q("q45","boss","An image shows water with increased green reflectance but reduced blue and red reflectance. Which explanation is most consistent with the lesson?","A small amount of vegetation in the water",48,"The submerged/emergent-vegetation slide gives this green-up, blue/red-down response for little vegetation.",undefined,"hard")
 ];
 
 const pageNotes:string[]=[

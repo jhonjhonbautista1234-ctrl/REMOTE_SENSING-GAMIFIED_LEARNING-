@@ -197,7 +197,7 @@ function learn() {
   const concepts = activeLesson().concepts;
   if (!concepts.length) return emptyLesson("Learn");
   const c = concepts[active % concepts.length];
-  return `<main>${backButton()}<header><div><p class="eyebrow">${activeLessonLabel().toUpperCase()} · LEARN · PAGE ${c.sourcePage}</p><h1>${esc(c.term)}</h1><p class="muted">${esc(c.topic)}</p></div>${progress(c)}</header><section class="study-card"><p class="definition">${esc(c.definition)}</p><div class="fact-list">${c.facts.map((f) => `<p>✦ ${esc(f)}</p>`).join("")}</div><footer><span>Source: page ${c.sourcePage}</span><div><button class="ghost" data-action="prev">← Previous</button><button data-action="next">Next concept →</button></div></footer></section><section class="lesson-topics"><h2>More in this lesson</h2><div class="mobile-topic-picker"><label for="topic-select">Jump to another topic</label><select id="topic-select">${concepts.map((x) => `<option value="${x.id}" ${x.id === c.id ? "selected" : ""}>${esc(x.term)}</option>`).join("")}</select></div><div class="chips">${concepts.map((x) => `<button data-concept="${x.id}">${esc(x.term)}</button>`).join("")}</div></section></main>`;
+  return `<main>${backButton()}<header class="learn-context"><p class="eyebrow">${activeLessonLabel().toUpperCase()} · LEARN · PAGE ${c.sourcePage}</p>${progress(c)}</header><section class="study-card"><header class="study-card-heading"><p class="study-card-topic">${esc(c.topic)}</p><h1>${esc(c.term)}</h1></header><p class="definition">${esc(c.definition)}</p><div class="fact-list">${c.facts.map((f) => `<p>✦ ${esc(f)}</p>`).join("")}</div><footer><span>Source: page ${c.sourcePage}</span><div><button class="ghost" data-action="prev">← Previous</button><button data-action="next">Next concept →</button></div></footer></section><section class="lesson-topics"><h2>More in this lesson</h2><div class="mobile-topic-picker"><label for="topic-select">Jump to another topic</label><select id="topic-select">${concepts.map((x) => `<option value="${x.id}" ${x.id === c.id ? "selected" : ""}>${esc(x.term)}</option>`).join("")}</select></div><div class="chips">${concepts.map((x) => `<button data-concept="${x.id}">${esc(x.term)}</button>`).join("")}</div></section></main>`;
 }
 function cover() {
   const cards = activeLesson().concepts;
@@ -307,6 +307,7 @@ function render() {
               : view === "library"
                 ? library()
                 : source());
+  window.scrollTo(0, 0);
   bind();
   bindFlashFlip();
 }
