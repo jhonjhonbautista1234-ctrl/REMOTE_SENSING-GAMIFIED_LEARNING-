@@ -1,0 +1,102 @@
+/* Mobile-only composition. Desktop styles remain in style.css. */
+.mobile-topic-picker{display:none}
+
+@media(max-width:760px){
+  body{overflow-x:hidden}
+
+  #app{display:block}
+
+  aside{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    align-items:stretch;
+    gap:8px;
+    width:100%;
+    height:auto;
+    position:sticky;
+    top:0;
+    z-index:20;
+    padding:12px;
+    overflow:visible;
+    border-right:0;
+    border-bottom:1px solid #1b3044;
+    background:#07101ff5;
+    box-shadow:0 8px 22px #0207135c;
+  }
+
+  .brand{
+    grid-column:span 1;
+    align-self:center;
+    padding:8px 3px;
+    font-size:15px;
+    line-height:.9;
+    white-space:normal;
+  }
+
+  .brand small{font-size:8px;letter-spacing:1.7px}
+
+  aside .lesson-active{
+    grid-column:span 2;
+    align-self:center;
+    margin:0;
+    padding:7px 10px;
+    font-size:14px;
+    line-height:1.1;
+  }
+
+  .lesson-active small{margin-top:4px;font-size:9px}
+
+  aside .nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    width:100%;
+    margin:0;
+    padding:7px 5px;
+    white-space:normal;
+    text-align:center;
+    font-size:11px;
+    line-height:1.18;
+  }
+
+  .side-note{display:none}
+
+  main{width:100%;padding:20px 16px 52px}
+  main>header{flex-direction:column;gap:12px;margin-bottom:22px}
+  h1{font-size:clamp(30px,9vw,38px);letter-spacing:-1.5px}
+  .eyebrow{font-size:10px;line-height:1.45}
+  .muted{margin-bottom:0}
+  .dots{order:2}
+
+  .page-actions{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+    margin-bottom:20px;
+  }
+
+  .page-actions button{min-height:44px;padding:8px 10px;font-size:12px;line-height:1.2}
+
+  .study-card,.cover-card,.quiz-card,.flash{padding:24px 20px;border-radius:18px}
+  .definition{font-size:20px;line-height:1.5}
+  .study-card footer>div{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+  .study-card footer button{margin:0;padding:10px 8px;font-size:12px}
+
+  .lesson-topics{margin-top:28px}
+  .lesson-topics h2{margin-bottom:12px;font-size:22px}
+  .mobile-topic-picker{display:grid;gap:7px}
+  .mobile-topic-picker label{color:#9ec6d3;font-size:12px;font-weight:700}
+  .mobile-topic-picker select{
+    width:100%;
+    min-height:46px;
+    padding:10px 36px 10px 12px;
+    border:1px solid #2d6581;
+    border-radius:11px;
+    background:#10263a;
+    color:#e3f8ff;
+    font:600 14px Manrope;
+  }
+
+  .lesson-topics .chips{display:none}
+}

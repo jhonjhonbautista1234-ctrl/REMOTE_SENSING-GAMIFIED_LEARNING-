@@ -1,6 +1,7 @@
 export type Difficulty = "easy" | "medium" | "hard" | "expert";
 export type Concept = { id:string; module:string; topic:string; term:string; definition:string; facts:string[]; sourcePage:number; difficulty:Difficulty; tags:string[] };
-export type Question = { id:string; type:"mcq"|"identify"|"tf"|"number"|"classify"|"boss"; question:string; answer:string; choices?:string[]; explanation:string; sourcePage:number; module:string; difficulty:Difficulty };
+export type VisualFill = { image:string; alt:string; prompts:Array<{ label:string; answer:string; hint:string }> };
+export type Question = { id:string; type:"mcq"|"identify"|"tf"|"number"|"classify"|"boss"; question:string; answer:string; choices?:string[]; explanation:string; sourcePage:number; module:string; difficulty:Difficulty; visualFill?:VisualFill };
 export type Module = { id:string; name:string; pages:[number,number]; description:string };
 export type LessonCategory = { id:string; name:string; description:string; contentStatus:"empty"|"contains-content" };
 export const lessonCategories:LessonCategory[] = [
